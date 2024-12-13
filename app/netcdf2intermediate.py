@@ -2,6 +2,8 @@ import numpy as np
 from netCDF4 import Dataset
 import pywinter.winter as pyw
 
+#dt_input = input("Please type the path to the dataset: ")
+#dataset = Dataset(dt_input, 'r')
 dataset = Dataset('./data/20211025120000-UKMO-L4_GHRSST-SSTfnd-OSTIA-GLOB_REP-v02.0-fv02.0.nc', 'r')
 
 print(dataset.variables.keys())
@@ -21,4 +23,4 @@ total_fields = [
     winter_t2m,
 ]
 
-pyw.cinter('FILE', '2021-10-25_12', winter_geo, total_fields, './data/')
+pyw.cinter('SST', '2021-10-25_12', winter_geo, total_fields, './data/')
